@@ -33,7 +33,9 @@ async function printQuestions(){
 // Making of the Div of each question and answer
         let listCreate = document.createElement('div');
         listCreate.id = 'seperateQuestion'
+        let submit = document.getElementById('submit-button');
         questionBox.appendChild(listCreate);
+
 // The input of the questions into the div above from the JSON file
         let questionText = document.createElement('label');
         questionText.id = 'questionText'
@@ -68,22 +70,44 @@ async function printQuestions(){
             console.log(data.questions[id].id +' ' +  'SINGLE SELECT');
 
             for(let i = 0; i<data.questions[id].options.length; i++){
+
               let optionsPrint = document.createElement('p');
               optionsPrint.textContent = data.questions[id].options[i];
               optionsPrint.id = 'option' + i;
               optionsPrint.className = 'options';
+
+
+              let singleBox = document.createElement('input');
+              singleBox.type = 'checkbox';
+              singleBox.className = 'checkbox';
+              singleBox.name = 'radio'
+              singleBox.id = i;
+
+
               listCreate.appendChild(optionsPrint);
+              optionsPrint.appendChild(singleBox);
+
+
             }
         }
         else if(data.questions[id].type === 'multi-select'){
             console.log(data.questions[id].id +' ' +  'MULTI SELECT');
 
             for(let i = 0; i<data.questions[id].options.length; i++){
+
               let optionsPrint = document.createElement('p');
               optionsPrint.textContent = data.questions[id].options[i];
               optionsPrint.id = 'option' + i;
               optionsPrint.className = 'options';
+
+              let checkbox = document.createElement('input');
+              checkbox.type = 'checkbox';
+              checkbox.className = 'checkbox';
+              checkbox.id = i;
+;
               listCreate.appendChild(optionsPrint);
+              optionsPrint.appendChild(checkbox);
+
         }
       }
         else{console.log('there must be an error in your questions!!');}

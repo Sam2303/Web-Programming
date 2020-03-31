@@ -3,6 +3,7 @@
 --backgroundColor: #f3f3f3;
 --navBackground: #41404a;
 --navText: #f3f3f3;
+--questionBackground: black;
 
 }
 
@@ -64,4 +65,60 @@ body{
 .nav-links:hover{
   text-decoration: underline;
   transition: 1s ease;
+}
+
+
+/* making questions look good */
+
+#questionnaireTitle{
+  text-align: center;
+  padding: 50px;
+  margin:2% 1%;
+  color: var(--questionBackground);
+  text-decoration: underline;
+  font-size: 200%;
+  }
+
+#questions-box{
+  margin:1% 5%;
+  padding: 2%;
+  background-color: var(--navBackground);
+  border-radius: 10px;
+}
+
+#seperateQuestion{
+padding: 10px;
+margin:4% 2%;
+background-color: white;
+border-radius: 15px;
+text-align: center;
+}
+
+#questionText{
+  margin: 2%;
+  font-size: 130%;
+  color: black;
+}
+
+/* styling of the answers input */
+
+.textBox,
+.numberBox
+{
+  outline: none;
+  position: relative;
+  width: 80%;
+  margin: 5% 10%;
+  padding: 10px;
+  height: 50%;
+  border-radius: 10px;
+  font-weight: 200;
+  font-size: 120%;
+}
+
+/*  styling of the suubmit buton */
+
+.submitButton{
+  display: block;
+  text-align: center;
 }

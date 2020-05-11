@@ -14,7 +14,7 @@ navBarToggle.addEventListener('click', function() {
 window.onload = printQuestions();
 async function printQuestions(){
   // Defining the route to the JSON file
-    const url = '../example-questionnaire.json';
+    const url = '../static/JSON/example-questionnaire.json';
 // Fetch Query
     const response = await fetch(url);
 // The Response from the Fetch

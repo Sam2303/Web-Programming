@@ -67,6 +67,75 @@ body{
   transition: 1s ease;
 }
 
+/* Home Page */
+.welcome{
+  margin: 100px 0% 0% 0%;
+}
+.welcome-text{
+ text-align: center;
+ font-size: 200%;
+ color: var(--navBackground);
+}
+.welcome-text h1{
+  padding: 5%;
+}
+.welcome-text p{
+  margin: 50px 0 0 0;
+  padding: 5%;
+  font-size: 120%;
+}
+
+
+/* Choices on Homepage */
+.features{
+  margin: 50px 20px 0 20px;
+  border-radius: 15px;
+  padding: 25px;
+  text-align: center;
+  background-color: var(--navBackground);
+
+}
+.one-f{
+  margin: 25px;
+  font-size: 150%;
+}
+.one-f a{
+  color: var(--navText);
+  text-decoration: none;
+}
+
+
+
+
+
+/* Styling for choose Questionaire */
+.pageTitle{
+  text-align: center;
+  padding: 50px;
+  margin:2% 1%;
+  color: var(--questionBackground);
+  text-decoration: underline;
+  font-size: 200%;
+}
+.surveys{
+  margin:1% 5%;
+  padding: 2%;
+  background-color: var(--navBackground);
+  border-radius: 10px;
+}
+#seperateSurvey{
+  padding: 10px;
+  margin:4% 2%;
+  background-color: white;
+  border-radius: 15px;
+  text-align: center;
+}
+.survey-link{
+  text-align: center;
+  color: var(--navBackground);
+  text-decoration: none;
+  font-size: 150%;
+}
 
 /* making questions look good */
 
@@ -152,4 +221,36 @@ text-align: center;
 
   font-size: 130%;
   color: var(--navText);
+}
+
+
+
+/* Create Survey Page */
+#create-title{
+  text-align: center;
+  color: var(--navBackground);
+  font-size: 250%;
+  margin: 10%;
+}
+
+.question-create{
+  margin: 10%;
+  width: 80%;
+}
+.survey-text{
+  color: var(--navBackground);
+  margin: 20px 0 0 0 ;
+}
+#survey-title-input
+{
+  position: relative;
+  width: 80%;
+  padding: 5px;
+  height: 20%;
+  border-radius: 5px;
+  font-weight: 200;
+}
+.question-create i{
+  width: 10%;
+  margin: 0 45% 0 45%;
 }

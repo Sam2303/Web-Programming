@@ -65,30 +65,30 @@ addQuestionBtn.addEventListener('click', function(){
   qTypes.appendChild(qTypeSingleSelect);
   qTypes.appendChild(qTypeMultSelect);
 
-// making the add option in for more options
-// making the question options input
+// making the add option in for more qOption
+// making the question qOption input
   qTypeText.addEventListener('click', function(){
 
     let typeTextDiv = document.createElement('div');
-    typeTextDiv.id = 'textOptions';
+    typeTextDiv.id = 'textqOption';
     questionAddCreate.appendChild(typeTextDiv);
 
-    let textOptions = document.createElement('p');
-    textOptions.className = 'options';
-    textOptions.textContent = 'Option';
+    let textqOption = document.createElement('p');
+    textqOption.className = 'qOption';
+    textqOption.textContent = 'Option';
 
     let textInput = document.createElement('input');
     textInput.className = 'qInput';
 
       for(let i = 1; i < 3; i++){
-        let textOptions = document.createElement('p');
-        textOptions.className = 'options';
-        textOptions.textContent = 'Option';
+        let textqOption = document.createElement('p');
+        textqOption.className = 'qOption';
+        textqOption.textContent = 'Option';
 
         let textInput = document.createElement('input');
         textInput.className = 'qInput';
 
-        typeTextDiv.appendChild(textOptions);
+        typeTextDiv.appendChild(textqOption);
         typeTextDiv.appendChild(textInput);
       }
 
@@ -97,15 +97,15 @@ addQuestionBtn.addEventListener('click', function(){
       typeTextDiv.appendChild(addBtn);
 
   addBtn.addEventListener('click', function(){
-    let textOptions = document.createElement('p');
-    textOptions.className = 'options';
-    textOptions.textContent = 'Option';
+    let textqOption = document.createElement('p');
+    textqOption.className = 'qOption';
+    textqOption.textContent = 'Option';
 
     let textInput = document.createElement('input');
     textInput.className = 'qInput';
 
 
-    typeTextDiv.appendChild(textOptions);
+    typeTextDiv.appendChild(textqOption);
     typeTextDiv.appendChild(textInput);
       });
 
@@ -115,25 +115,25 @@ addQuestionBtn.addEventListener('click', function(){
   qTypeNumber.addEventListener('click', function(){
 
     let typeNumberDiv = document.createElement('div');
-    typeNumberDiv.id = 'textOptions';
+    typeNumberDiv.id = 'numberqOption';
     questionAddCreate.appendChild(typeNumberDiv);
 
-    let NumberOptions = document.createElement('p');
-    textOptions.className = 'options';
-    textOptions.textContent = 'Option';
+    let NumberqOption = document.createElement('p');
+    NumberqOption.className = 'qOption';
+    NumberqOption.textContent = 'Option';
 
     let NumberInput = document.createElement('input');
     NumberInput.className = 'qInput';
 
       for(let i = 1; i < 3; i++){
-        let NumberOptions = document.createElement('p');
-        NumberOptions.className = 'options';
-        NumberOptions.textContent = 'Option';
+        let NumberqOption = document.createElement('p');
+        NumberqOption.className = 'qOption';
+        NumberqOption.textContent = 'Option';
 
         let NumberInput = document.createElement('input');
         NumberInput.className = 'qInput';
 
-        typeNumberDiv.appendChild(NumberOptions);
+        typeNumberDiv.appendChild(NumberqOption);
         typeNumberDiv.appendChild(NumberInput);
       }
 
@@ -142,18 +142,106 @@ addQuestionBtn.addEventListener('click', function(){
       typeNumberDiv.appendChild(addBtn);
 
   addBtn.addEventListener('click', function(){
-    let NumberOptions = document.createElement('p');
-    NumberOptions.className = 'options';
-    NumberOptions.textContent = 'Option';
+    let NumberqOption = document.createElement('p');
+    NumberqOption.className = 'qOption';
+    NumberqOption.textContent = 'Option';
 
     let NumberInput = document.createElement('input');
     NumberInput.className = 'qInput';
 
 
-    typeNumberDiv.appendChild(NumberOptions);
+    typeNumberDiv.appendChild(NumberqOption);
     typeNumberDiv.appendChild(NumberInput);
     });
   });
 
-// making the add option in for more options
+
+  qTypeSingleSelect.addEventListener('click', function(){
+
+    let qSingleSelect = document.createElement('div');
+    qSingleSelect.id = 'SSqOption';
+    questionAddCreate.appendChild(qSingleSelect);
+
+    let SSqOption = document.createElement('p');
+    SSqOption.className = 'qOption';
+    SSqOption.textContent = 'Option';
+
+    let singleSelectInput = document.createElement('input');
+    singleSelectInput.className = 'qInput';
+
+      for(let i = 1; i < 3; i++){
+        let SSqOption = document.createElement('p');
+        SSqOption.className = 'qOption';
+        SSqOption.textContent = 'Option';
+
+        let singleSelectInput = document.createElement('input');
+        singleSelectInput.className = 'qInput';
+
+        qSingleSelect.appendChild(SSqOption);
+        qSingleSelect.appendChild(singleSelectInput);
+      }
+
+      let addBtn = document.createElement('i');
+      addBtn.className = 'fa fa-plus-circle';
+      qSingleSelect.appendChild(addBtn);
+
+  addBtn.addEventListener('click', function(){
+    let SSqOption = document.createElement('p');
+    SSqOption.className = 'qOption';
+    SSqOption.textContent = 'Option';
+
+    let singleSelectInput = document.createElement('input');
+    singleSelectInput.className = 'qInput';
+
+
+    qSingleSelect.appendChild(SSqOption);
+    qSingleSelect.appendChild(singleSelectInput);
+    });
+  });
+
+
+
+  qTypeMultSelect.addEventListener('click', function(){
+
+    let qMultSelect = document.createElement('div');
+    qMultSelect.id = 'MultiqOption';
+    questionAddCreate.appendChild(qMultSelect);
+
+    let MultiqOption = document.createElement('p');
+    MultiqOption.className = 'qOption';
+    MultiqOption.textContent = 'Option';
+
+    let MultiInput = document.createElement('input');
+    MultiInput.className = 'qInput';
+
+      for(let i = 1; i < 3; i++){
+        let MultiqOption = document.createElement('p');
+        MultiqOption.className = 'qOption';
+        MultiqOption.textContent = 'Option';
+
+        let MultiInput = document.createElement('input');
+        MultiInput.className = 'qInput';
+
+        qMultSelect.appendChild(MultiqOption);
+        qMultSelect.appendChild(MultiInput);
+      }
+
+      let addBtn = document.createElement('i');
+      addBtn.className = 'fa fa-plus-circle';
+      qMultSelect.appendChild(addBtn);
+
+  addBtn.addEventListener('click', function(){
+    let MultiqOption = document.createElement('p');
+    MultiqOption.className = 'qOption';
+    MultiqOption.textContent = 'Option';
+
+    let MultiInput = document.createElement('input');
+    MultiInput.className = 'qInput';
+
+
+    qMultSelect.appendChild(MultiqOption);
+    qMultSelect.appendChild(MultiInput);
+    });
+  });
+// making the add option in for more qOption
 });

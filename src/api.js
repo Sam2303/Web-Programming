@@ -6,20 +6,18 @@ const express = require('express');
 
 const api = express.Router();
 
-function linked(){
-  console.log('linked');
-}
-
-api.post('/create', async(req) => {
+api.post('/create', async(req, res) => {
 
   const {name: qTitle} = req.body;
   console.log('Hello World')
   console.log(qTitle);
 
-  let json = JSON.parse('<json string>');
-  let data = JSON.stringify(json);
+  await res.json({ success:true });
+
+
+  let data = JSON.stringify(qTitle);
   let fs = require('fs');
-  fs.writeFile("file.json", data);
+  fs.writeFile("./src/static/JSON/file.json", data);
 
 
 });

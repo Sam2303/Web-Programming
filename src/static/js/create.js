@@ -18,6 +18,7 @@ addQuestionBtn.addEventListener('click', function(){
 
   let idInput = document.createElement('input');
   idInput.className = 'qInput';
+  idInput.id = 'qId';
 
   questionAddCreate.appendChild(idText);
   questionAddCreate.appendChild(idInput);
@@ -29,6 +30,7 @@ addQuestionBtn.addEventListener('click', function(){
 
   let qTitleInput = document.createElement('input');
   qTitleInput.className = 'qInput';
+  qTitleInput.id = 'qTitleInput';
 
   questionAddCreate.appendChild(qTitle);
   questionAddCreate.appendChild(qTitleInput);

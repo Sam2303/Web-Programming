@@ -163,7 +163,7 @@ border-radius: 15px;
 text-align: center;
 }
 
-#questionText{
+.questionText{
   margin: 2%;
   font-size: 130%;
   color: black;
@@ -209,7 +209,8 @@ text-align: center;
 
 /*  styling of the submit buton */
 
-#submit-button{
+#submit-button,
+#download-button{
   outline: none;
   border: none;
   width: 40%;

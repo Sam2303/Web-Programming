@@ -1,5 +1,5 @@
 'use strict';
-
+const elem = {};
 // overall block of code to the burger menu work
 let mainNav = document.getElementById('menu');
 let navBarToggle = document.getElementById('navBarToggle');
@@ -38,7 +38,9 @@ async function printQuestions(){
 
 // The input of the questions into the div above from the JSON file
         let questionText = document.createElement('label');
-        questionText.id = 'questionText'
+        questionText.className = 'questionText';
+
+        questionText.id = id;
         let Qtext = document.createTextNode(data.questions[id].text);
         questionText.appendChild(Qtext);
         listCreate.appendChild(questionText);
@@ -51,8 +53,8 @@ async function printQuestions(){
 
           let textAnswer = document.createElement('input');
           textAnswer.type = 'text';
-          textAnswer.id = id
-          textAnswer.className = 'textBox'
+          textAnswer.id = 'input'+id
+          textAnswer.className = 'textBox';
 
           listCreate.appendChild(textAnswer);
         }
@@ -61,7 +63,8 @@ async function printQuestions(){
 
             let textAnswer = document.createElement('input');
             textAnswer.type = 'number';
-            textAnswer.id = id
+
+            textAnswer.id = 'input'+id
             textAnswer.className = 'numberBox'
             listCreate.appendChild(textAnswer);
 
@@ -73,15 +76,14 @@ async function printQuestions(){
 
               let optionsPrint = document.createElement('p');
               optionsPrint.textContent = data.questions[id].options[i];
-              optionsPrint.id = 'option' + i;
+              optionsPrint.id = 'input' + i;
               optionsPrint.className = 'options';
 
 
               let singleBox = document.createElement('input');
-              singleBox.type = 'checkbox';
+              singleBox.type = 'radio';
               singleBox.className = 'checkbox';
-              singleBox.name = 'radio'
-              singleBox.id = i;
+              singleBox.id = 'check'+i;
 
 
               listCreate.appendChild(optionsPrint);
@@ -97,7 +99,7 @@ async function printQuestions(){
 
               let optionsPrint = document.createElement('p');
               optionsPrint.textContent = data.questions[id].options[i];
-              optionsPrint.id = 'option' + i;
+              optionsPrint.id = 'input' + i;
               optionsPrint.className = 'options';
 
               let checkbox = document.createElement('input');

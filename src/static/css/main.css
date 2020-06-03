@@ -194,7 +194,8 @@ text-align: center;
     border-bottom: 2px solid var(--navBackground);
 }
 
-.checkbox{
+.checkbox,
+.radioBox{
   width: 15px;
   height: 15px;
   padding:0;

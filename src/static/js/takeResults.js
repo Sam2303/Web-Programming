@@ -1,3 +1,5 @@
+//const elem = {};
+
 let submitBtn = document.getElementById('submit-button');
 submitBtn.addEventListener('click', async () => {
 
@@ -8,30 +10,65 @@ submitBtn.addEventListener('click', async () => {
   let count = container_div.getElementsByTagName('div').length;
 
 
+    const json = '../static/JSON/example-questionnaire.json';
+    const response = await fetch(json);
+    const getJ = await response.json()
+
   const surveyTitle = document.getElementById('questionnaireTitle').innerHTML;
 
-const data = {name : surveyTitle,};
-data.answers = [];
+  const data = {name : surveyTitle,};
+  data.answers = [];
+
 
   for (let i=0; i<count; i++){
-    console.log(i);
-
     let questionId = i;
     let questionTitle = document.getElementById(i).innerHTML;
-    let qAnswer = document.getElementById('input'+i).value;
+    elem.qAnswer = document.getElementById('input'+i).value;
+
+    let check = document.getElementById('seperateQuestion');
+    elem.checkType = document.getElementsByClassName('radioBox');
+
+    if(getJ.questions[i].type === 'single-select'){
+
+      elem.checkBoxes = document.getElementsByName('radioOptions');
+      elem.checkBoxesChecked = "";
+
+      for (let z = 0; z<elem.checkBoxes.length; z++){
+        if(elem.checkBoxes[z].checked){
+          elem.checkBoxesChecked += elem.checkBoxes[z].value + "";
+        }
+          elem.checkBoxes[z].checked = false;
+      }
+      elem.qAnswer = elem.checkBoxesChecked;
+  }
+
+  elem.checkType = document.getElementsByClassName('checkbox');
+
+  if(getJ.questions[i].type === 'multi-select'){
+
+    elem.checkBoxes = document.getElementsByName('checkOptions');
+    elem.checkBoxesChecked = "";
+
+    for (let z = 0; z<elem.checkBoxes.length; z++){
+      if(elem.checkBoxes[z].checked){
+        elem.checkBoxesChecked += elem.checkBoxes[z].value + ", ";
+      }
+        elem.checkBoxes[z].checked = false;
+    }
+    elem.qAnswer = elem.checkBoxesChecked;
+}
+
 
     let answer = {
       id: questionId,
       text: questionTitle,
-      response: qAnswer
+      response: elem.qAnswer
     };
 
-    let containerDiv = document.getElementById('seperateQuestion');
-    let countOptions = containerDiv.getElementsByTagName('p').length;
-    
-
+    console.log(answer);
     data.answers.push(answer);
 }
+
 
 
     const submit_response = await fetch(url, {
@@ -42,7 +79,7 @@ data.answers = [];
 
     const returned = await submit_response.json();
     if (returned.success === true) {
-         console.log('it worked');
+         console.log('File Saved');
      } else {
          console.log('There has been an error');
      }

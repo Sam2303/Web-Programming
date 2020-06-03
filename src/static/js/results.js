@@ -12,7 +12,7 @@ window.onload = async function printResults(){
   const response = await fetch(url);
   const data = await response.json();
 
-  console.log(data);
+  //console.log(data);
   const rObject = document.getElementById('questions-box');
 	const rTitle = document.createElement('h1');
   rTitle.textContent = data.name + ' Results';
@@ -38,18 +38,21 @@ window.onload = async function printResults(){
 };
 
 let downloadBtn = document.getElementById('download-button');
-downloadBtn.addEventListener('click', function() {
+downloadBtn.addEventListener('click', async function() {
 
-  var url  = '../static/resultsJSON/test.json';
-  var fileName = 'myData.json';
+  const url = '../static/resultsJSON/test.json';
+  const response = await fetch(url);
+  const data = await response.json();
 
-  // Create a blob of the data
-  var fileToSave = new Blob([(url)], {
-      type: 'application/json',
-      name: fileName
-  });
-
-  // Save the file
-  saveAs(fileToSave, fileName);
+  download(JSON.stringify(data), "Answers.json");
 
   });
+
+  // Function that creates a link with a downloadable file
+  function download(data, fileN) {
+   const a = document.createElement("a");
+   const file = new Blob([data]);
+   a.href = URL.createObjectURL(file);
+   a.download = fileN;
+   a.click();
+  }

@@ -82,9 +82,12 @@ async function printQuestions(){
 
               let singleBox = document.createElement('input');
               singleBox.type = 'radio';
-              singleBox.className = 'checkbox';
+              singleBox.value = data.questions[id].options[i];
+              singleBox.name = 'radioOptions';
+              singleBox.className = 'radioBox';
               singleBox.id = 'check'+i;
 
+              listCreate.className = 'checkBox';
 
               listCreate.appendChild(optionsPrint);
               optionsPrint.appendChild(singleBox);
@@ -104,6 +107,8 @@ async function printQuestions(){
 
               let checkbox = document.createElement('input');
               checkbox.type = 'checkbox';
+              checkbox.value = data.questions[id].options[i];;
+              checkbox.name = 'checkOptions';
               checkbox.className = 'checkbox';
               checkbox.id = i;
 ;

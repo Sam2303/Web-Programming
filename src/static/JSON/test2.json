@@ -1,1 +1,1 @@
-{"name":"Sam","questions":[{"id":"1","text":"1"}]}
+{"name":"Sams Test Survey","questions":[{"id":"name","text":"What is your name?","type":"text","options":[]},{"id":"age","text":"How old are you?","type":"number","options":[]},{"id":"fav","text":"Which is your favourite?","type":"single-select","options":["Chocolate","Wine gums","Fruit"]},{"id":"know","text":"what languages do you know","type":"multi-select","options":["Chocolate","Wine gums","Fruit","russian","welsh"]}]}

@@ -3,12 +3,13 @@
  */
 const express = require('express');
 const api = express.Router();
+const elem = {};
 
 
 
 api.post('/create', async(req, res) => {
   const data = req.body;
-  console.log('data');
+  console.log('create data recieved');
 
   if (data !== data) {
        await res.json({ success: false });
@@ -24,9 +25,6 @@ api.post('/create', async(req, res) => {
   });
 
 });
-
-
-
 
 api.post('/results', async(req, res) => {
 
@@ -60,7 +58,6 @@ api.get('/viewResults', async (res,req) => {
       }
 
 });
-
 
 
 module.exports = api ;

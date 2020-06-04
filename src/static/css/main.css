@@ -260,7 +260,7 @@ text-align: center;
 }
 
 /* styling of creating a question */
-#questionAdd{
+.questionAdd{
   background: var(--navBackground);
   border-radius: 5px;
   padding: 5px;
@@ -269,7 +269,7 @@ text-align: center;
   font-size: 120%;
 }
 
-#questionAdd p{
+.questionAdd p{
   margin: 4px;
 }
 
